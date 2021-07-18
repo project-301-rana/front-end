@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from './components/Header'
 import {withAuth0} from '@auth0/auth0-react'
-import Login from './login';
+import Login from './components/Login';
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,7 +20,7 @@ export class App extends Component {
         <Switch>
 
           <Route exact path="/">
-        {this.props.auth0.isAuthenticated ? <Home/> : <Login/>}
+           <Home/> 
           </Route>
           
           <Route exact path="/Menu">
@@ -34,7 +34,7 @@ export class App extends Component {
           
 
           <Route exact path="/Order">
-        <Order/>
+          {this.props.auth0.isAuthenticated ? <Order/> : <Login/>}
           </Route>
 
           <Route exact path="/Profile">

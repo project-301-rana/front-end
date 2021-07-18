@@ -1,25 +1,29 @@
 .backgroundImage{
   display:block;
   margin:auto;
-  height:756px
+  height:80%;
+  width:80%;
+  margin-top: 5%;
 }
 
 
 .menuImages{
-  display:flex;
-  margin-left: 50px;
+  width:100%;
 }
 
 .cardImage{
-  width:300px;
+  width:2rem;
+  display: inline-block;
+  height:200px;
 }
 .mainCardImages{
-width:260px;
-height:210px;
+width:90%;
+height:100%;
 display: block;
 margin: auto;
 }
 
+/* Form */
 .form .butForm{
     background-color: #70e000;
 }
@@ -67,76 +71,49 @@ margin: auto;
   /* Form */
   .form{
     width:45rem;
-    margin: auto;
-    margin-top:3rem;
   }
 
   /* Select */
   .selectContainer{
-    margin: auto 0px;
-    display: flex;
+    background-color: #92e6a7;
+    height:25rem;
+    width:15rem;
+    padding-top:4%;
+    padding-left:3%;
+    margin-top:5%;
+    position: fixed;
   }
-  .select1{
-    background-color: #2dc653;
-    height:3rem;
-    width:10rem;
-    margin-right:3rem;
-    border-radius: 1rem;
-    font-size: 17px;
-  }
-  .select2{
-    background-color: #4ad66d;
-    height:3rem;
-    width:10rem;
-    margin-right:3rem;
-    border-radius: 1rem;
-    font-size: 17px;
-  }  
-  .select3{
-    background-color: #6ede8a;
-    height:3rem;
-    width:10rem;
-    margin-right:3rem;
-    border-radius: 1rem;
-    font-size: 17px;
-  }
-  .select4{
+  .select{
     background-color: #92e6a7;
     height:3rem;
     width:10rem;
-    border-radius: 1rem;
+    margin-right:3rem;
     font-size: 17px;
+    border:none;
+    margin-bottom:0.5rem;
+    margin-top:5%;
   }
+
   /* Selected buttons hover */
-  .select1:hover{
+  .select:hover{
     background-color: #10451d;
     color:blanchedalmond;
 
   }
-  .select2:hover{
-    background-color: #10451d;
-    color:blanchedalmond;
-  }  
-  .select3:hover{
-    background-color: #10451d;
-    color:blanchedalmond;
-  }
-  .select4:hover{
-    background-color: #10451d;
-    color:blanchedalmond;
-  }
+
 
   /* Search box */
-  .search{
-    width:20rem;
-    margin: auto;
-    margin-top:1.5rem;
-  }
-  .butForm{
-    width:20rem;
 
-  }
 
   .imageZoom{
     width:30px;
   }
+
+
+  
+/* Side nav */
+
+.sideNav{
+  background-color: wheat;
+  width:15%
+}

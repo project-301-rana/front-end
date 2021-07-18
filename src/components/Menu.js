@@ -3,6 +3,9 @@ import { Card, Button, Form, Dropdown, ButtonGroup } from 'react-bootstrap'
 import axios from 'axios';
 import '../CSS/Menu.css';
 import { withAuth0 } from '@auth0/auth0-react';
+import recipe from './recipe.json';
+import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+
 export class Menu extends Component {
 
     constructor(props) {
@@ -19,6 +22,22 @@ export class Menu extends Component {
         }
     }
 
+    componentDidMount = async () => {
+        try {
+            // const url = `http://localhost:3001/getDataAPI?query=${this.state.searchQuery}`;
+            const url = `${process.env.REACT_APP_SERVER}/getDataAPI?query=Cake`;
+            const food = await axios.get(url);
+            this.setState({
+                foodData: food.data,
+                showFood: true
+            })
+        } catch {
+            this.setState({
+                showFood: false,
+            })
+        }
+
+    }
 
 
     getFood = async (e) => {
@@ -71,56 +90,20 @@ export class Menu extends Component {
 
 
 
-            <>
-
-                <img className="backgroundImage" alt="background" src="https://t3.ftcdn.net/jpg/02/54/20/88/360_F_254208823_NXcV5RCcWJ1vgSuWjhPqIpPmqXIyBrDO.jpg" />
-                
-                <div className="menuImages">
-
-                    <Card className="cardImage" style={{ width: '20rem', margin: '3rem' }}>
-                        <Card.Title >Some quick example </Card.Title>
-                        <Card.Img className="mainCardImages" variant="top" src="https://www.eatthis.com/wp-content/uploads/2019/06/deep-dish-pizza-chicago.jpg" />
-                        <Card.Body>
-
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-
-                    <Card className="cardImage"  style={{ width: '20rem', margin: '3rem' }}>
-                        <Card.Title >Some quick example </Card.Title>
-                        <Card.Img className="mainCardImages" variant="top" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F44%2F-0001%2F11%2F30%2F90567.jpg" />
-                        <Card.Body>
-
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-
-                    <Card className="cardImage"  style={{ width: '20rem', margin: '3rem' }}>
-                        <Card.Title >Some quick example </Card.Title>
-                        <Card.Img className="mainCardImages" variant="top" src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gnocchi-1d16725.jpg?quality=90&resize=440%2C400" />
-                        <Card.Body>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                        </Card.Body>
-
-                    </Card>
-                </div>
+            <div style={{display:'flex'}}>
+               
 
                 <Form className="form" onSubmit={this.getFood}>
 
                     <div className="selectContainer">
                         {/* The Main dish */}
+                        
+                        <Form.Group className="search" controlId="formBasicEmail">
+                            <Form.Control style={{ width: '10rem'}} placeholder="Search" type="text" onChange={this.updateSearchQuery}  />
+                        </Form.Group>
 
                         <Form.Group  >
-                            <Form.Control className="select1" as="select" custom onChange={this.updateSearchQuery}>
+                            <Form.Control className="select" as="select" custom onClick={this.getFood} onChange={this.updateSearchQuery}>
                                 <option value='Pasta'>Main dish</option>
                                 <option value='Pasta'>Pasta</option>
                                 <option value='Chicken'>Chicken</option>
@@ -131,7 +114,7 @@ export class Menu extends Component {
                         {/* Sweets */}
 
                         <Form.Group >
-                            <Form.Control className="select2" as="select" custom onChange={this.updateSearchQuery}>
+                            <Form.Control className="select" as="select" onClick={this.getFood}  custom onChange={this.updateSearchQuery}>
                                 <option>Sweets</option>
                                 <option value='Tart'> Tart</option>
                                 <option value='Cake '>Cake </option>
@@ -143,7 +126,7 @@ export class Menu extends Component {
 
                         {/* Drinks */}
                         <Form.Group>
-                            <Form.Control className="select3" as="select" custom onChange={this.updateSearchQuery}>
+                            <Form.Control className="select" as="select" onClick={this.getFood}  custom onChange={this.updateSearchQuery}>
                                 <option>Drinks</option>
                                 <option value='Detox'>Detox</option>
                                 <option value='Tea'>Tea</option>
@@ -154,7 +137,7 @@ export class Menu extends Component {
 
                         {/* Drinks */}
                         <Form.Group>
-                            <Form.Control className="select4" as="select" custom onChange={this.updateSearchQuery}>
+                            <Form.Control className="select" as="select" onClick={this.getFood}  custom onChange={this.updateSearchQuery}>
                                 <option>Drinks</option>
                                 <option value='Detox'>Detox</option>
                                 <option value='Tea'>Tea</option>
@@ -162,17 +145,6 @@ export class Menu extends Component {
                                 <option value='Fish'>Fish</option>
                             </Form.Control>
                         </Form.Group>
-                    </div>
-                    <div class="search">
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Enter the name of the dish</Form.Label>
-                            <Form.Control style={{ width: '20rem' }} type="text" onChange={this.updateSearchQuery} placeholder="Enter email" />
-                        </Form.Group>
-
-
-                        <Button className="butForm" variant="primary" type="submit">
-                            Search
-                        </Button>
 
                     </div>
                 </Form>
@@ -180,10 +152,10 @@ export class Menu extends Component {
 
 
                 {/* Cards */}
-                <div style={{ display: 'flex', flexFlow: 'row', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', flexFlow: 'row', flexWrap: 'wrap'}}>
                     {this.state.showFood &&
                         this.state.foodData.map((item, index) => (
-                            <Card className="APICard" style={{ width: '20rem', margin: '3rem' }}>
+                            <Card className="APICard" style={{ width: '15rem', margin: '3rem' }}>
                                 <Card.Img className="image" variant="top" src={item.image} />
                                 <Card.Body>
                                     <Card.Title >{item.title}</Card.Title>
@@ -201,7 +173,7 @@ export class Menu extends Component {
 
                 </div>
 
-            </>
+            </div>
         )
     }
 }

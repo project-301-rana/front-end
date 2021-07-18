@@ -1,10 +1,11 @@
-.ordersImages{
-    width:130px;
-}
 
-Table{
-    margin-top: 50px;
+
+.ordersTable{
     text-align: center;
+    /* background-color: #99d98c; */
+    width:80%;
+    margin: auto;
+    margin-top: 50px;
 }
 
 Table td  {
@@ -12,14 +13,22 @@ Table td  {
 }
 
 .firstRow{
-    background-color: gray;
-    color:whitesmoke
+    background-color: #b7e4c7;
+    color:black;
 }
 
 Table tr:hover{
     background-color: #b7efc5;
 }
-
-Table tbody tr img {
-    width:40px;
+.ordersImages{
+    width:70%;
+    height:100px;
 }
+
+.deleteImage{
+width:40px;
+cursor: grab;
+}
+
+
+

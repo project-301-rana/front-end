@@ -136,7 +136,7 @@ class MyFavoriteBooks extends React.Component {
         <div className="secondDiv" style={{ display: 'flex', flexFlow: 'row', flexWrap: 'wrap' }} >
 
           {this.state.recipeData.map((item, idx) => (
-            <Card className="card" style={{ width: '20rem', margin: '3rem' }}>
+            <Card className="imagesCards" style={{ width: '20rem', margin: '3rem' }}>
               <Card.Img className="img" variant="top" src={item.image} />
               <Card.Body>
                 <p>{item.title} </p>
@@ -144,24 +144,6 @@ class MyFavoriteBooks extends React.Component {
               <Button onClick={() => this.recipeModal(idx)} variant="primary">See full recipe</Button>
             </Card>
           ))}
-
-          {/* <Card className="card">
-            <Card.Img className="img" src="https://www.thespruceeats.com/thmb/iCMJZTL8cKjtlNBJrRDeA_SYpGY=/2980x2980/smart/filters:no_upscale()/fresh-strawberry-cake-3051498-hero-01-ffd76a916178427c8dea864ef111952b.jpg" />
-            <p> Strawberry cake</p>
-            <Button onClick={this.recipeModal} variant="primary">See full recipe</Button>
-          </Card>
-
-          <Card className="card">
-            <Card.Img className="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSlrgs8pTF1KEKlysmx3zxF59z4zXlQKQitA&usqp=CAU" />
-            <p> Chinese noodles </p>
-            <Button onClick={this.recipeModal} variant="primary">See full recipe</Button>
-          </Card>
-
-          <Card className="card">
-            <Card.Img className="img" src="https://natashaskitchen.com/wp-content/uploads/2019/02/Greek-Salad.jpg" />
-            <p>Greek Salad</p>
-            <Button onClick={this.recipeModal} variant="primary">See full recipe</Button>
-          </Card> */}
         </div>
 
         <Modal
