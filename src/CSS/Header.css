@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.nav{
+    background-color:#38b000;
+}
+
+ .nav h2{
+    font-family: 'Great Vibes', cursive;
+    font-weight: 500;
+    margin-right: 100px;
+    margin-left:200px;
+    float:left;
+    font-size: 50px;
+    color:whitesmoke
+}
+
+
+.nav Button{
+    background-color: #38b000;
+    border:none;
+    font-weight: 500;
+    margin-right:50px;
+    color:white
+
+}
+
+.nav .but1 {
+    /* background-color: #70e000; */
+    background-color:white;
+    border-radius: 15px;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+}
+
+.but1 .link{
+    color:black
+}

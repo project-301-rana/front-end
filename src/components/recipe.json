@@ -1,0 +1,17 @@
+[
+    {
+        "title":"Strawberry cake",
+        "image":"https://www.thespruceeats.com/thmb/iCMJZTL8cKjtlNBJrRDeA_SYpGY=/2980x2980/smart/filters:no_upscale()/fresh-strawberry-cake-3051498-hero-01-ffd76a916178427c8dea864ef111952b.jpg",
+        "description":"Strawberry Syrup Some quick example text to build on the card title and make up the bulk of the card's content"
+    },
+    {
+        "title":"Chinese noodles",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSlrgs8pTF1KEKlysmx3zxF59z4zXlQKQitA&usqp=CAU",
+        "description":"Noodles and Veggies With Peanut Sauce Some quick example text to build on the card title and make up the bulk of the card's content."
+    },
+    {
+        "title":"Greek Salad",
+        "image":"https://natashaskitchen.com/wp-content/uploads/2019/02/Greek-Salad.jpg",
+        "description":"Greek Side Salad Some quick example text to build on the card title and make up the bulk of the card's content."
+    }
+]

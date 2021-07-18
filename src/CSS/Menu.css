@@ -1,0 +1,142 @@
+.backgroundImage{
+  display:block;
+  margin:auto;
+  height:756px
+}
+
+
+.menuImages{
+  display:flex;
+  margin-left: 50px;
+}
+
+.cardImage{
+  width:300px;
+}
+.mainCardImages{
+width:260px;
+height:210px;
+display: block;
+margin: auto;
+}
+
+.form .butForm{
+    background-color: #70e000;
+}
+
+ .APICard:before {
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;left:0;right:0;
+    background-color:rgba(0,0,0,0);
+  }
+  .APICard:hover::before {
+    background-color:rgba(0, 0, 0, 0.5);
+  }
+
+  .APICard .but1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    opacity:0;
+  } 
+  .APICard .but2 {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    opacity:0;
+  } 
+
+  .APICard:hover .but1 {   
+    opacity: 1;
+    background-color: #70e000;
+    border:none;
+  }
+  .APICard:hover .but2 {   
+    opacity: 1;
+    background-color: #70e000;
+    border:none;
+  } 
+
+  /* Form */
+  .form{
+    width:45rem;
+    margin: auto;
+    margin-top:3rem;
+  }
+
+  /* Select */
+  .selectContainer{
+    margin: auto 0px;
+    display: flex;
+  }
+  .select1{
+    background-color: #2dc653;
+    height:3rem;
+    width:10rem;
+    margin-right:3rem;
+    border-radius: 1rem;
+    font-size: 17px;
+  }
+  .select2{
+    background-color: #4ad66d;
+    height:3rem;
+    width:10rem;
+    margin-right:3rem;
+    border-radius: 1rem;
+    font-size: 17px;
+  }  
+  .select3{
+    background-color: #6ede8a;
+    height:3rem;
+    width:10rem;
+    margin-right:3rem;
+    border-radius: 1rem;
+    font-size: 17px;
+  }
+  .select4{
+    background-color: #92e6a7;
+    height:3rem;
+    width:10rem;
+    border-radius: 1rem;
+    font-size: 17px;
+  }
+  /* Selected buttons hover */
+  .select1:hover{
+    background-color: #10451d;
+    color:blanchedalmond;
+
+  }
+  .select2:hover{
+    background-color: #10451d;
+    color:blanchedalmond;
+  }  
+  .select3:hover{
+    background-color: #10451d;
+    color:blanchedalmond;
+  }
+  .select4:hover{
+    background-color: #10451d;
+    color:blanchedalmond;
+  }
+
+  /* Search box */
+  .search{
+    width:20rem;
+    margin: auto;
+    margin-top:1.5rem;
+  }
+  .butForm{
+    width:20rem;
+
+  }
+
+  .imageZoom{
+    width:30px;
+  }

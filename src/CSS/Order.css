@@ -1,0 +1,25 @@
+.ordersImages{
+    width:130px;
+}
+
+Table{
+    margin-top: 50px;
+    text-align: center;
+}
+
+Table td  {
+    width:40px;
+}
+
+.firstRow{
+    background-color: gray;
+    color:whitesmoke
+}
+
+Table tr:hover{
+    background-color: #b7efc5;
+}
+
+Table tbody tr img {
+    width:40px;
+}
