@@ -6,6 +6,10 @@ import recipe from './recipe.json';
 import Modal from './recipeModal';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
+import pic1 from '../images/pic1.png';
+import pic2 from '../images/pic2.png';
+import pic3 from '../images/pic3.png';
+import food from '../images/food.jpg';
 
 class MyFavoriteBooks extends React.Component {
 
@@ -24,27 +28,22 @@ class MyFavoriteBooks extends React.Component {
 
   changeImage1 = () => {
     this.setState({
-      source: 'https://purepng.com/public/uploads/large/purepng.com-falafelfelafefalafelpattysandwich-1411527418192f1lwg.png'
+      source: pic1
     })
   }
 
   changeImage2 = () => {
     this.setState({
-      source: 'https://cdn.hellofresh.com/us/cms/plans/Pork-Recipe-700x700.png'
+      source: pic2
     })
   }
 
   changeImage3 = () => {
     this.setState({
-      source: 'https://www.chefmarcsmealprep.com/wp-content/uploads/2018/03/Moroccan-Chicken-Plate_grande.png'
+      source: pic3
     })
   }
 
-  changeImage4 = () => {
-    this.setState({
-      source: 'https://www.searchpng.com/wp-content/uploads/2019/01/Healthy-Food-PNG-Picture.png'
-    })
-  }
 
   recipeModal = async (idx) => {
     await this.setState({
@@ -77,10 +76,9 @@ class MyFavoriteBooks extends React.Component {
             </p>
             <button>LEARN MORE </button>
             <section className="decondSec">
-              <img onClick={this.changeImage1} src="https://purepng.com/public/uploads/large/purepng.com-falafelfelafefalafelpattysandwich-1411527418192f1lwg.png" />
-              <img onClick={this.changeImage2} src="https://cdn.hellofresh.com/us/cms/plans/Pork-Recipe-700x700.png" />
-              <img onClick={this.changeImage3} src="https://www.chefmarcsmealprep.com/wp-content/uploads/2018/03/Moroccan-Chicken-Plate_grande.png" />
-              <img onClick={this.changeImage4} src="https://www.searchpng.com/wp-content/uploads/2019/01/Healthy-Food-PNG-Picture.png" />
+              <img onClick={this.changeImage1} src={pic1} />
+              <img onClick={this.changeImage2} src={pic2} />
+              <img onClick={this.changeImage3} src={pic3} />
             </section>
           </section>
 
@@ -119,7 +117,7 @@ class MyFavoriteBooks extends React.Component {
           <Carousel.Item className="carousel">
             <img
               className="d-block w-100"
-              src="https://qtmd.org/wp-content/uploads/2019/07/howcuttingdo.jpg"
+              src={food}
               alt="Third slide"
             />
 
